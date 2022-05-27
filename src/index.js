@@ -148,6 +148,11 @@ class Board extends React.Component {
             this.setState({counter: counter + 1})
             this.setState({activeRow: counter + 1})
         }
+
+        if (this.state.counter === 7) {
+            this.setState({status: 'You LOST!  🤷🏻‍♂️ 🤷🏻‍♂️ 🤷🏻‍♂️'})
+            this.setState({clearDisabled: true})
+        }
     }
 
     restart() { // this could probably be done in more elegant way, with clone-deep or something
